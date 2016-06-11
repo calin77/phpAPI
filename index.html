@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="listApp">
+    <head>
+        <title>Simple Rest API test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="list.js"></script>
+        <link rel="stylesheet" type="text/css" href="mystyle.css"/>
+    </head>
+    <body >
+        <div class='vlist' ng-controller="listcontroller">
+
+            <p>Total videos loaded: {{list.length}}</p>
+            <div class='videolist'>
+                <ul class="list">
+                    <li ng-repeat="listitem in list"><a href ng-click="episodeslist(listitem.href, listitem.title)">{{listitem.title}}</a></li>
+                </ul>
+            </div>   
+
+
+            <div class="episodeslist display">  
+                <span class='close' ng-click="close()">X</span>
+                <p></p> 
+                <div class='elist'>
+                    <ul class="episodes">
+                        <li ng-repeat="epitem in episodes"><a href ng-href="{{epitem.href1}}">{{epitem.title1}}</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+</html>
+
